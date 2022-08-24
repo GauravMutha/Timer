@@ -1,0 +1,164 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+}
+
+input[type=number] {
+    width: 100%;
+    caret-color: yellow;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.circle {
+    background-color: blue;
+    border-radius: 50%;
+    width: 255px;
+    height: 255px;
+    position: relative;
+}
+
+.circle::before {
+    content: "";
+    width: 95%;
+    height: 95%;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.timerbox {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    width: 75%;
+    text-align: center;
+    color: white;
+}
+
+.timerbox :nth-child(1)::after,
+.timerbox :nth-child(2)::after {
+    content: ":";
+}
+
+.blink-me{
+    animation: blinking 1s linear infinite;
+}
+
+@keyframes blinking{
+    50%{
+        opacity: 0;
+    }
+}
+
+.controlic{
+    height: 24px;
+    width:24px
+}
+
+.controls{
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background-color: yellow;
+}
+
+.controls:active{
+    transform: scale(0.8);
+    opacity: 0.8;        
+}
+
+.controls:hover{
+    cursor: pointer;
+}
+
+
+.btns{
+    width: 60px;
+    height: 60px;
+}
+
+.reset,.go{
+    position: absolute;
+}
+
+.upper-main,.lower-main{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    width: 60%;
+    height: 100%;
+}
+
+.upper-main{
+    justify-content: space-evenly;
+}
+
+.lower-main{
+    justify-content: stretch;
+}
+
+.upper,.lower{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+}
+
+.lower{
+    height: 35vh;
+    margin-top: 50px;
+}
+
+
+.setters{
+    height: 110px;
+    width: 400px;
+    top: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inps{
+    height: 40%;
+    border-radius: 10%;
+    font-size: 1.7rem;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    background: none;
+    border: 1px solid grey;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.inps:focus{
+    border: 3px solid yellow;
+    outline: none;
+}
+
+::placeholder{
+    color: white;
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+.inps:focus::placeholder{
+    color: transparent;
+}
